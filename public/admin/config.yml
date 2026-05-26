@@ -1,0 +1,72 @@
+# public/admin/config.yml
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/images/propiedades"
+public_folder: "/images/propiedades"
+
+collections:
+  - name: "propiedades"
+    label: "Propiedades"
+    folder: "src/content/propiedades"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+
+      - label: "Tipo de operación"
+        name: "operacion"
+        widget: "select"
+        options: ["Venta", "Alquiler", "Alquiler temporal"]
+
+      - label: "Tipo de propiedad"
+        name: "tipo"
+        widget: "select"
+        options: ["Casa", "Departamento", "Local comercial", "Oficina", "Terreno", "PH"]
+
+      - label: "Estado"
+        name: "estado"
+        widget: "select"
+        options: ["Disponible", "Reservado", "Vendido/Alquilado"]
+        default: "Disponible"
+
+      - { label: "Precio (USD)", name: "precio", widget: "number" }
+      - { label: "Superficie total (m²)", name: "superficie_total", widget: "number" }
+      - { label: "Superficie cubierta (m²)", name: "superficie_cubierta", widget: "number", required: false }
+      - { label: "Ambientes", name: "ambientes", widget: "number", required: false }
+      - { label: "Dormitorios", name: "dormitorios", widget: "number", required: false }
+      - { label: "Baños", name: "banos", widget: "number", required: false }
+      - { label: "Cochera", name: "cochera", widget: "boolean", default: false }
+
+      - label: "Ubicación"
+        name: "ubicacion"
+        widget: "object"
+        fields:
+          - { label: "Dirección", name: "direccion", widget: "string" }
+          - { label: "Barrio", name: "barrio", widget: "string" }
+          - { label: "Ciudad", name: "ciudad", widget: "string" }
+          - { label: "Provincia", name: "provincia", widget: "string" }
+
+      - label: "Imágenes"
+        name: "imagenes"
+        widget: "list"
+        field:
+          { label: "Imagen", name: "imagen", widget: "image" }
+
+      - { label: "Imagen destacada", name: "imagen_destacada", widget: "image" }
+      - { label: "Descripción", name: "body", widget: "markdown" }
+      - { label: "Destacada en home", name: "destacada", widget: "boolean", default: false }
+
+  - name: "agentes"
+    label: "Agentes"
+    folder: "src/content/agentes"
+    create: true
+
+    fields:
+      - { label: "Nombre", name: "name", widget: "string" }
+      - { label: "Foto", name: "foto", widget: "image" }
+      - { label: "Teléfono", name: "telefono", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Especialidad", name: "especialidad", widget: "string", required: false }
