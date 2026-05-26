@@ -3,7 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.12.0",
+    "pnpm": ">=11.0.0"
   },
   "scripts": {
     "dev": "astro dev",
@@ -11,8 +12,8 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {
-    "@astrojs/vercel": "^10.0.7",
-    "astro": "^6.3.7"
+  "devDependencies": {
+    "@astrojs/vercel": "10.0.7",
+    "astro": "6.3.7"
   }
 }
