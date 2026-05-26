@@ -2,10 +2,10 @@ import { defineCollection } from "astro:content";
 import { z } from 'astro/zod';
 import { glob } from "astro/loaders";
 
-const properties = defineCollection({
+const propiedades = defineCollection({
   loader: glob({
     pattern: "**/*.md",
-    base: "./src/content/properties",
+    base: "./src/content/propiedades",
   }),
 
   schema: z.object({
@@ -33,5 +33,5 @@ const properties = defineCollection({
 });
 
 export const collections = {
-  properties,
+  propiedades,
 };
