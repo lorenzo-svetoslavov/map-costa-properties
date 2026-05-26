@@ -1,7 +1,10 @@
 # public/admin/config.yml
 backend:
-  name: git-gateway
+  name: github
+  repo: lorenzo-svetoslavov/map-costa-properties
   branch: main
+  base_url: https://map-costa-properties.vercel.app
+  auth_endpoint: /api/auth
 
 media_folder: "src/assets/images/propiedades"
 public_folder: "/images/propiedades"
