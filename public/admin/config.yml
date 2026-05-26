@@ -6,13 +6,13 @@ backend:
   base_url: https://map-costa-properties.vercel.app
   auth_endpoint: /api/auth
 
-media_folder: "src/assets/images/properties"
-public_folder: "/images/properties"
+media_folder: "src/assets/images/propiedades"
+public_folder: "/images/propiedades"
 
 collections:
-  - name: "properties"
+  - name: "propiedades"
     label: "Propiedades"
-    folder: "src/content/properties"
+    folder: "src/content/propiedades"
     create: true
     slug: "{{slug}}"
 
